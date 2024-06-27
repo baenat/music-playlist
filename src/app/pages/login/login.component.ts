@@ -15,7 +15,8 @@ export class LoginComponent {
     private spotifyService: SpotifyService,
     private router: Router,
   ) {
-
+    const session = localStorage.getItem('token');
+    if (session !== null) this.router.navigateByUrl('player/home');
   }
 
   ngOnInit(): void {
