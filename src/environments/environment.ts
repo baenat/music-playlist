@@ -5,7 +5,7 @@ export const environment = {
 export const spotifyConfiguration = {
   clientId: '6433912d9b4f479191e06c610d0fd8fe',
   authEndpoint: 'https://accounts.spotify.com/authorize',
-  redirectUrl: 'https://playlist-music.surge.sh/login/callback',
+  redirectUrl: 'http://localhost:4200/login/callback',
   scopes: [
     "user-read-currently-playing",
     "user-read-recently-played",
