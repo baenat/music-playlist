@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="inputSearch" placeholder="Artists, Music, PLaylists" (keyup.enter)="search()">
+<div class="segments flex">
+  <span *ngFor="let recent of searchRecents" (click)="defineSearch(recent)">{{ recent }}</span>
+</div>

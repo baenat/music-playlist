@@ -1,1 +1,110 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$music-playlist-primary: mat.define-palette(mat.$indigo-palette);
+$music-playlist-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$music-playlist-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$music-playlist-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $music-playlist-primary,
+      accent: $music-playlist-accent,
+      warn: $music-playlist-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($music-playlist-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./assets/styles/variables.scss";
+
+html,
+body {
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  background-color: $color-background;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+
+    &-thumb {
+      background-color: rgba($color-primary, 0.2);
+      border-radius: 10px;
+    }
+
+    &-track {
+      background-color: transparent;
+    }
+  }
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  &-center {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.title {
+  color: $color-primary;
+  display: block;
+  font-weight: 700;
+
+  &-bg {
+    @extend .title;
+    font-size: 2.8rem;
+  }
+
+  &-md {
+    @extend .title;
+    font-size: 1.8rem;
+  }
+}
+
+.mt{
+  @for $i from 1 to 10 {
+    &-#{ $i } {
+      margin-top: #{ $i }vh;
+    }
+  }
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.card {
+  box-shadow: 0px 0px 15px $color-dark-transparent-03;
+  background-color: $color-white;
+  border-radius: 10px;
+}

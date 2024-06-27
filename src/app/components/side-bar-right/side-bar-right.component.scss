@@ -1,0 +1,18 @@
+@import '../../../assets/styles/variables.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  flex-flow: wrap;
+  // max-height: 100vh;
+  // max-width: 300px;
+  width: 300px;
+  padding: 40px 20px 20px 20px;
+  background-color: $color-secondary;
+
+  .player {
+    flex-grow: 1;
+  }
+}

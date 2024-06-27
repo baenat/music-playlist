@@ -1,0 +1,31 @@
+@import '../../../assets/styles/variables.scss';
+
+:host {
+  background-color: #222;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+
+  .base {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+
+    img {
+      width: 40%
+    }
+
+    button {
+      font-size: 1.8rem;
+      min-width: 200px;
+      padding: 15px;
+      border-radius: 100px;
+      background-color: $color-primary;
+      color: white;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+}

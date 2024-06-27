@@ -1,0 +1,9 @@
+<div *ngIf="artists.length">
+  <span class="title-md"> Top 5 Artistas</span>
+  <app-artist-item-image
+    *ngFor="let artist of artists"
+    [artistName]="artist.name"
+    [imageSrc]="artist.imageUrl"
+    class="mt-1"
+  > {{ artist.name }} </app-artist-item-image>
+</div>

@@ -1,0 +1,43 @@
+@import '../../../assets/styles/variables.scss';
+
+:host {
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border-color: $color-dark-transparent-30;
+    outline: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    &::placeholder {
+      color: $color-dark-transparent-30;
+      font-size: 1.4rem;
+    }
+
+    &:focus, &:active {
+      border-color: $color-primary;
+      border-width: 1px;
+    }
+  }
+
+  .segments {
+    flex-wrap: wrap;
+
+    span {
+      background-color: $color-white;
+      margin-right: 5px;
+      padding: 8px;
+      color: $color-dark-transparent-70;
+      border: 1px solid $color-dark-transparent-30;
+      margin-top: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($color-primary, .8);
+        color: $color-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import '../../../assets/styles/variables.scss';
+
+:host {
+  display: block;
+  width: 100%;
+
+  button {
+    width: 100%;
+    border: 0;
+    padding:  10px 0 10px 20px;
+    border-radius: 5px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: $color-primary;
+    background-color: transparent;
+    cursor: pointer;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      white-space: nowrap;
+      margin-left: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // text-wrap: wrap;
+    }
+
+    &.selected {
+      background-color: $color-primary;
+      color: $color-secondary;
+    }
+  }
+
+  button:hover {
+    background-color: $color-primary;
+    color: $color-secondary;
+  }
+}

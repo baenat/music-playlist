@@ -1,0 +1,33 @@
+@import '../../../assets/styles/variables.scss';
+
+div {
+
+  padding: 5px 30px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: $color-primary;
+  border-top: 1px solid $color-dark-transparent-30;
+  font-size: 1.5rem;
+
+  img {
+    flex-grow: 0;
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  span {
+    flex-grow: 1;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &.icon {
+    flex-grow: 0;
+    cursor: pointer;
+  }
+}
