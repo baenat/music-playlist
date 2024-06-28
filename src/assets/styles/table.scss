@@ -14,8 +14,9 @@
 
   .executando {
     background-color: $color-white;
-    padding: 10px;
-    box-shadow: 0px 0px 15px $color-dark-transparent-30;
+    padding: 8px;
+    box-shadow: 0px 0px 15px -10 $color-dark-transparent-30;
+    border: 1px solid $color-primary;
 
     td {
       color: $color-primary;

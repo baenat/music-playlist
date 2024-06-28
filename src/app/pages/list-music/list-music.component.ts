@@ -26,7 +26,7 @@ export class ListMusicComponent {
   title = '';
 
   playlistMusic: ISongs[] = [];
-  musicCurrent: ISongs = newMusica();
+  currentMusic: ISongs = newMusica();
   playIcon = faPlay;
 
   private destroy$ = new Subject<void>();
@@ -39,6 +39,7 @@ export class ListMusicComponent {
 
   ngOnInit(): void {
     this.getListMusic();
+    this.getCurrentMusic();
   }
 
   getListMusic = () => {
@@ -80,6 +81,12 @@ export class ListMusicComponent {
   async executarMusica(music: ISongs) {
     this.playerService.currentSong = music;
     await this.spotifyService.playMusic(music.id);
+  }
+
+  getCurrentMusic = () => {
+    this.playerService.currentSong$.pipe(takeUntil(this.destroy$)).subscribe(music => {
+      this.currentMusic = music;
+    });
   }
 
   ngOnDestroy() {

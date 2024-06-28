@@ -18,7 +18,7 @@
     <tbody>
       <tr *ngFor="let music of playlistMusic"
           (click)="executarMusica(music)"
-          [class.executando]="music.id === musicCurrent.id"
+          [class.executando]="music.id === currentMusic.id"
           >
         <td>
           <fa-icon class="play"  [icon]="playIcon" ></fa-icon>
