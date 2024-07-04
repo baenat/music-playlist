@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPause, faStepBackward, faStepForward } from '@fortawesome/free-solid-svg-icons';
+import { faClose, faPause, faPlay, faStepBackward, faStepForward } from '@fortawesome/free-solid-svg-icons';
 import { Subject, takeUntil } from 'rxjs';
 import { ISongs } from 'src/app/core/interfaces/ISongs';
 import { newMusica } from 'src/app/shared/helpers/factories';
@@ -20,7 +20,10 @@ export class PlayerCardComponent {
 
   previousIcon = faStepBackward;
   stopIcon = faPause;
+  playIcon = faPlay;
   nextIcon = faStepForward;
+  resumeIcon = this.stopIcon
+  closeIcon = faClose;
 
   constructor(
     private playerService: PlayerService
@@ -28,7 +31,6 @@ export class PlayerCardComponent {
 
   ngOnInit(): void {
     this.getSongPlay();
-
   }
 
   getSongPlay = () => {
@@ -43,10 +45,15 @@ export class PlayerCardComponent {
 
   resumeMusic = () => {
     this.playerService.resumeMusic();
+    this.resumeIcon = (this.resumeIcon === this.playIcon) ? this.stopIcon : this.playIcon;
   }
 
   nextMusic = () => {
     this.playerService.nextMusic();
+  }
+
+  closePlayerMusic = () => {
+    this.playerService.currentSong = newMusica();
   }
 
   ngOnDestroy(): void {

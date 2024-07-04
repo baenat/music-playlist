@@ -10,5 +10,6 @@ export interface ISongs {
     name: string,
     imageUrl: string | undefined
   },
-  time: string
+  time: string,
+  duration?: number
 }

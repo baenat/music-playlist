@@ -15,6 +15,10 @@ export const PlayerRoutes: Routes = [
       {
         path: 'list/:type/:id',
         component: ListMusicComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'home'
       }
     ]
   }

@@ -64,6 +64,7 @@ export const tracksSpotify = (songTrack: SpotifyApi.TrackObjectFull): ISongs => 
       name: artista.name
     })),
     time: msParaMinutos(songTrack.duration_ms),
+    duration: songTrack.duration_ms
   }
 }
 

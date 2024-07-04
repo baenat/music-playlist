@@ -26,6 +26,7 @@ export class PlayerService {
   // Setter para actualizar el valor del BehaviorSubject
   set currentSong(music: ISongs) {
     this.currentMusic.next(music);
+    this.endTimeMusic(music);
   }
 
   getCurrentMusic = async () => {
@@ -37,6 +38,13 @@ export class PlayerService {
     this.timerId = setInterval( async () => {
       await this.getCurrentMusic();
     }, 5000);
+  }
+
+  endTimeMusic = async (music: ISongs) => {
+    clearInterval(this.timerId);
+    this.timerId = setInterval( async () => {
+      this.currentSong = newMusica()
+    }, music.duration);
   }
 
   previousMusic = () => {

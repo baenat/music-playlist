@@ -1,10 +1,14 @@
 <div class="container card p-10">
-  <div class="image" [style.background-image]="'url('+ musicPlay.album.imageUrl +')'"></div>
+  <div class="image" [style.background-image]="'url('+ musicPlay.album.imageUrl +')'">
+    <span>
+      <fa-icon [icon]="closeIcon" (click)="closePlayerMusic()"></fa-icon>
+    </span>
+  </div>
   <div class="controls">
     <span>{{ musicPlay.title }}</span>
     <div class="buttons">
       <fa-icon [icon]="previousIcon" (click)="previousMusic()"></fa-icon>
-      <fa-icon [icon]="stopIcon" (click)="resumeMusic()"></fa-icon>
+      <fa-icon [icon]="resumeIcon" (click)="resumeMusic()"></fa-icon>
       <fa-icon [icon]="nextIcon" (click)="nextMusic()"></fa-icon>
     </div>
   </div>
